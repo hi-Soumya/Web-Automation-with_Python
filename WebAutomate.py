@@ -5,7 +5,7 @@ from tkinter import Text, messagebox
 
 def download_pdf():
     try:
-        pdf_name = xml_text.get("1.0", "end-1c").strip()
+        pdf_name = input_text.get("1.0", "end-1c").strip()
         if not pdf_name:
             messagebox.showwarning("Input Required", "Please enter a PDF file name or a part of the name.")
             return
@@ -35,8 +35,8 @@ def download_pdf():
 root = tktr.Tk()
 root.title("Provide PDF file name in the BOX Below")
 
-xml_text = Text(root, width=50, height=20, wrap=tktr.WORD)
-xml_text.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
+input_text = Text(root, width=50, height=20, wrap=tktr.WORD)
+input_text.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
 
 generate_button = tktr.Button(root, text="Download PDF", command=download_pdf)
 generate_button.grid(row=1, column=0, padx=20, pady=20, sticky="nsew")
